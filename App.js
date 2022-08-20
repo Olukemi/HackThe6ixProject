@@ -14,7 +14,20 @@ import { withSafeAreaInsets } from 'react-native-safe-area-context';
 import {Collapse,CollapseHeader, CollapseBody, AccordionList} from 'accordion-collapse-react-native';
 
 
-/* starting page -> this is what the user will first see when they download the app. they can sign up or log in */
+/* starting page */
+function WSPortal ({ navigation }){
+  return (
+    <View style={styles.container_portal}>
+      
+      <TouchableOpacity style={styles.plan_behave} onPress={() => navigation.navigate('Wealthsimple Plans')}>
+        <Image style={styles.logo} source={require('./assets/logo.png')} />
+      </TouchableOpacity>
+
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
 function WSPlans ({ navigation }){
   return (
     <View style={styles.container}>
@@ -27,18 +40,31 @@ function WSPlans ({ navigation }){
           <Text style={styles.name_sub}>Current Plans</Text>
           <SafeAreaView style={styles.container_currentplans}>
             <ScrollView horizontal={true} style={styles.scrollView_currentplans}>
-              <Image style={styles.plan_images} source={require('./assets/work.jpeg')} />
-              <Text style={styles.text}> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun </Text>
+              <TouchableOpacity style={styles.plan_behave} onPress={() => navigation.navigate('Canada Learning Bond Plan')}>
+                <Image style={styles.plan_images} source={require('./assets/work.jpeg')} />
+                <Text style={styles.text}> Canada Learning Bond Plan </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={styles.plan_behave} onPress={() => navigation.navigate('Canada Learning Bond Plan')}>
+                <Image style={styles.plan_images} source={require('./assets/work.jpeg')} />
+                <Text style={styles.text}> How to Get a Mortgage Plan </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={styles.plan_behave} onPress={() => navigation.navigate('Canada Learning Bond Plan')}>
+                <Image style={styles.plan_images} source={require('./assets/work.jpeg')} />
+                <Text style={styles.text}> How to Get a Mortgage Plan </Text>
+              </TouchableOpacity>
+
               </ScrollView>
             </SafeAreaView>
 
           <Text style={styles.name_sub}>Recommendations</Text>
-          <Image style={styles.plan_images} source={require('./assets/work.jpeg')} />
-          <Text style={styles.text}>
+          <Image style={styles.plan_imagesrec} source={require('./assets/work.jpeg')} />
+          <Text style={styles.name_sub}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</Text>
-          <Image style={styles.plan_images} source={require('./assets/work.jpeg')} />
-          <Text style={styles.text}>
+          <Image style={styles.plan_imagesrec} source={require('./assets/work.jpeg')} />
+          <Text style={styles.name_sub}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</Text>
         </ScrollView>
@@ -50,11 +76,11 @@ function WSPlans ({ navigation }){
           <AntDesign name="staro" size={24} color="black" />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('')}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Protal')}>
           <AntDesign name="home" size={24} color="black"/>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Canada Learning Bond Plan')}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('')}>
           <AntDesign name="user" size={24} color="black" />
           </TouchableOpacity>
         </View>
@@ -74,15 +100,18 @@ function CLB ({ navigation }){
       <Text style={styles.name_sub}>Canada Learning Bond</Text>
 
       {/*plan banner - CLB*/}
-      <Image style={styles.plan_images} source={require('./assets/work.jpeg')} />
+      <Image style={styles.plan_imagesclb} source={require('./assets/work.jpeg')} />
 
-      <Text style={styles.name_sub}>CLB - 80% Complete</Text>
+      {/*progress bar - CLB*/}
+      <Text style={styles.name_comp}>CLB - 100% Complete!</Text>
+      <Text style={styles.name_comp}>Try out the quiz for a chance to earn WS credits!</Text>
+      <View style={styles.progress_bar}></View>
 
       {/*day 1*/}
       <Collapse>
         <CollapseHeader>
           <View>
-          <Text style={styles.name_sub}>Day 1</Text>
+          <Text style={styles.name_day}>Day 1</Text>
           </View>
         </CollapseHeader>
         <CollapseBody>
@@ -96,7 +125,7 @@ function CLB ({ navigation }){
       <Collapse>
         <CollapseHeader>
           <View>
-          <Text style={styles.name_sub}>Day 2</Text>
+          <Text style={styles.name_day}>Day 2</Text>
           </View>
         </CollapseHeader>
         <CollapseBody>
@@ -110,7 +139,7 @@ function CLB ({ navigation }){
       <Collapse>
         <CollapseHeader>
           <View>
-          <Text style={styles.name_sub}>Day 3</Text>
+          <Text style={styles.name_day}>Day 3</Text>
           </View>
         </CollapseHeader>
         <CollapseBody>
@@ -128,11 +157,11 @@ function CLB ({ navigation }){
           <AntDesign name="staro" size={24} color="black" />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('')}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Protal')}>
           <AntDesign name="home" size={24} color="black"/>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Canada Learning Bond Plan')}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('')}>
           <AntDesign name="user" size={24} color="black" />
           </TouchableOpacity>
         </View>
@@ -150,6 +179,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="Wealthsimple Protal" component={WSPortal} />
         <Stack.Screen name="Wealthsimple Plans" component={WSPlans} />
         <Stack.Screen name="Canada Learning Bond Plan" component={CLB} />
       </Stack.Navigator>
@@ -160,14 +190,22 @@ export default function App() {
 const styles = StyleSheet.create({
 
   text : {
-    color: 'white',
-    fontSize: 30,
+    color: 'black',
+    fontSize: 20,
+  },
+
+  logo: {
+    width: 300,
+    height: 300,
+    marginBottom: 50,
+    marginLeft: 15,
   },
   name_main: {
     fontSize: 40,
     color: '#fff',
     //fontFamily: 'Comfortaa_400Regular',
-    marginBottom: 50,
+    marginTop: 5,
+    marginBottom: 5,
   },
 
   name_sub: {
@@ -177,9 +215,31 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
 
+  name_comp: {
+    fontSize: 15,
+    color: '#fff',
+    //fontFamily: 'Comfortaa_400Regular',
+    marginBottom: 10,
+  },
+
+  name_day: {
+    fontSize: 20,
+    color: '#fff',
+    //fontFamily: 'Comfortaa_400Regular',
+    marginBottom: 30,
+    borderTopWidth: 0.5,
+    borderTopColor: '#EBEBEB',
+  },
+
   container: {
     flex: 1,
     backgroundColor: '#000',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  container_portal: {
+    flex: 1,
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -193,7 +253,7 @@ const styles = StyleSheet.create({
 
   scrollView: {
     marginHorizontal: 20,
-    marginVertical: 20,
+    marginVertical: 10,
   },
   scrollView_currentplans: {
     marginBottom: 30,
@@ -213,7 +273,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 0.5,
     borderTopColor: '#EBEBEB',
     paddingTop: 7, 
-    paddingBottom: 25, 
+    paddingBottom: 10, 
   },
 
   iconBehave: {
@@ -222,10 +282,46 @@ const styles = StyleSheet.create({
     padding: 8,
   },
 
+  plan_behave: {
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 8,
+    marginRight: 20,
+  },
+
   plan_images: {
+    borderRadius: 15,
     width: 300,
     height: 200,
     marginBottom: 10,
+  },
+
+  plan_imagesclb: {
+    borderRadius: 15,
+    width: 500,
+    height: 200,
+    marginBottom: 10,
+  },
+
+
+  plan_imagesrec: {
+    borderRadius: 15,
+    width: 320,
+    height: 200,
+    marginBottom: 10,
+  },
+
+  progress_bar: {
+    flexDirection: 'row',
+    backgroundColor: 'grey',
+    width: '80%',
+    height: 20,
+    justifyContent: 'space-evenly',
+    marginBottom: 20, 
+    borderWidth: 1,
+    borderRadius: 10,
+    borderColor: '#fff',
+    marginBottom: 35,
   }
 
 });
