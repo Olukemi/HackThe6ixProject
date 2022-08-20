@@ -28,6 +28,27 @@ function WSPortal ({ navigation }){
   );
 }
 
+/* tips page */
+function FTips ({ navigation }){
+  
+  <View style={styles.navContainer}>
+        <View style={styles.navBar}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Plans')}>
+          <AntDesign name="staro" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Protal')}>
+          <AntDesign name="home" size={24} color="black"/>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Quiz Assessements')}>
+          <AntDesign name="user" size={24} color="black" />
+          </TouchableOpacity>
+        </View>
+  </View>
+}
+
+/* plans page */
 function WSPlans ({ navigation }){
   return (
     <View style={styles.container}>
@@ -80,7 +101,7 @@ function WSPlans ({ navigation }){
           <AntDesign name="home" size={24} color="black"/>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('')}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Quiz Assessements')}>
           <AntDesign name="user" size={24} color="black" />
           </TouchableOpacity>
         </View>
@@ -92,6 +113,7 @@ function WSPlans ({ navigation }){
   );
 }
 
+/* CLB plan */
 function CLB ({ navigation }){
   return (
     <View style={styles.container}>
@@ -161,7 +183,7 @@ function CLB ({ navigation }){
           <AntDesign name="home" size={24} color="black"/>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('')}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Quiz Assessements')}>
           <AntDesign name="user" size={24} color="black" />
           </TouchableOpacity>
         </View>
@@ -172,6 +194,26 @@ function CLB ({ navigation }){
   );
 }
 
+/* quiz page */
+function QA ({ navigation }){
+  
+  <View style={styles.navContainer}>
+        <View style={styles.navBar}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Plans')}>
+          <AntDesign name="staro" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Protal')}>
+          <AntDesign name="home" size={24} color="black"/>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Quiz Assessements')}>
+          <AntDesign name="user" size={24} color="black" />
+          </TouchableOpacity>
+        </View>
+  </View>
+}
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -180,8 +222,10 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Wealthsimple Protal" component={WSPortal} />
+        <Stack.Screen name="Financial Tips" component={FTips} />
         <Stack.Screen name="Wealthsimple Plans" component={WSPlans} />
         <Stack.Screen name="Canada Learning Bond Plan" component={CLB} />
+        <Stack.Screen name="Quiz Assessements" component={QA} />
       </Stack.Navigator>
     </NavigationContainer>
   );
