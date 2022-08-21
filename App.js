@@ -49,7 +49,7 @@ function FTips ({ navigation }){
         <AntDesign name="staro" size={24} color="black" />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Protal')}>
+        <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Portal')}>
         <AntDesign name="home" size={24} color="black"/>
         </TouchableOpacity>
 
@@ -112,7 +112,7 @@ function WSPlans ({ navigation }){
           <AntDesign name="staro" size={24} color="black" />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Protal')}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Portal')}>
           <AntDesign name="home" size={24} color="black"/>
           </TouchableOpacity>
 
@@ -194,7 +194,7 @@ function CLB ({ navigation }){
           <AntDesign name="staro" size={24} color="black" />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Protal')}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Portal')}>
           <AntDesign name="home" size={24} color="black"/>
           </TouchableOpacity>
 
@@ -223,7 +223,7 @@ function QA ({ navigation }){
           <AntDesign name="staro" size={24} color="black" />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Protal')}>
+          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Portal')}>
           <AntDesign name="home" size={24} color="black"/>
           </TouchableOpacity>
 
@@ -243,7 +243,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Wealthsimple Protal" component={WSPortal} />
+        <Stack.Screen name="Wealthsimple Portal" component={WSPortal} />
         <Stack.Screen name="Financial Tips" component={FTips} />
         <Stack.Screen name="Wealthsimple Plans" component={WSPlans} />
         <Stack.Screen name="Canada Learning Bond Plan" component={CLB} />
