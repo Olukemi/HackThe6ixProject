@@ -14,7 +14,7 @@ import { withSafeAreaInsets } from 'react-native-safe-area-context';
 import {Collapse,CollapseHeader, CollapseBody, AccordionList} from 'accordion-collapse-react-native';
 
 
-/* starting page */
+/* starting page -- */
 function WSPortal ({ navigation }){
   return (
     <View style={styles.container_portal}>
