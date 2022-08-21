@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
+
 import {useState, useEffect} from 'react';
 import { StyleSheet, Text, View, Button, Image, TextInput, Pressable, Switch, Alert} from 'react-native';
 import { SafeAreaView, ScrollView, TouchableOpacity, useColorScheme} from 'react-native';
@@ -12,6 +13,9 @@ import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { withSafeAreaInsets } from 'react-native-safe-area-context';
 import {Collapse,CollapseHeader, CollapseBody, AccordionList} from 'accordion-collapse-react-native';
+
+import Quiz from './components/Quiz';
+
 
 
 /* starting page */
@@ -117,6 +121,7 @@ function WSPlans ({ navigation }){
 function CLB ({ navigation }){
   return (
     <View style={styles.container}>
+
       
       {/*main text - CLB*/}
       <Text style={styles.name_sub}>Canada Learning Bond</Text>
@@ -190,6 +195,7 @@ function CLB ({ navigation }){
       </View>
 
       <StatusBar style="auto" />
+
     </View>
   );
 }
