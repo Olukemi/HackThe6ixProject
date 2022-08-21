@@ -138,22 +138,22 @@ function Quiz ({navigation}) {
         }
     }
 
-    // const restartQuiz = () => {
-    //     setShowScoreModal(false);
+    const restartQuiz = () => {
+        setShowScoreModal(false);
 
-    //     setCurrentQuestionIndex(0);
-    //     setScore(0);
+        setCurrentQuestionIndex(0);
+        setScore(0);
 
-    //     setCurrentOptionSelected(null);
-    //     setCorrectOption(null);
-    //     setIsOptionsDisabled(false);
-    //     setShowNextButton(false);
-    //     Animated.timing(progress, {
-    //         toValue: 0,
-    //         duration: 1000,
-    //         useNativeDriver: false
-    //     }).start();
-    // }
+        setCurrentOptionSelected(null);
+        setCorrectOption(null);
+        setIsOptionsDisabled(false);
+        setShowNextButton(false);
+        Animated.timing(progress, {
+            toValue: 0,
+            duration: 1000,
+            useNativeDriver: false
+        }).start();
+    }
 
     const [progress, setProgress] = useState(new Animated.Value(0));
     const progressAnim = progress.interpolate({
@@ -184,9 +184,9 @@ function Quiz ({navigation}) {
     }
 
 
-    function takeBack({navigation}){
+    function takeBack(){
         setShowScoreModal(false)
-        navigation.navigate('Wealthsimple Protal')
+        // navigation.navigate('Wealthsimple Protal');
     }
 
     const image1= {uri: '../icons/bgQuiz.png'};
@@ -235,8 +235,8 @@ function Quiz ({navigation}) {
                 score == 4 ? "$20" :
                 score == 5 ? "$25" : ""} in WS credit!</Text>
 
-                <TouchableOpacity style={styles.goBackButton}>
-                    <Text style={{fontSize:20}} onClick={() => takeBack()}>Back to Home</Text>
+                <TouchableOpacity style={styles.goBackButton} onPress={() => restartQuiz()}>
+                    <Text style={{fontSize:20}} >Back to Home</Text>
                 </TouchableOpacity>
                 </View>
                 
