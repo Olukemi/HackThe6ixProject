@@ -19,7 +19,7 @@ function WSPortal ({ navigation }){
   return (
     <View style={styles.container_portal}>
       
-      <TouchableOpacity style={styles.plan_behave} onPress={() => navigation.navigate('Wealthsimple Plans')}>
+      <TouchableOpacity style={styles.plan_behave} onPress={() => navigation.navigate('Financial Tips')}>
         <Image style={styles.logo} source={require('./assets/logo.png')} />
       </TouchableOpacity>
 
@@ -30,22 +30,36 @@ function WSPortal ({ navigation }){
 
 /* tips page */
 function FTips ({ navigation }){
-  
-  <View style={styles.navContainer}>
-        <View style={styles.navBar}>
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Plans')}>
-          <AntDesign name="staro" size={24} color="black" />
-          </TouchableOpacity>
+    return (
+      <View style={styles.container_tips}>
+      
+      <View style={styles.container_tips}>
+        <Image style = {styles.tinyLogo} resizeMode = "contain" source= {{uri: 'https://usersnap.com/blog/wp-content/uploads/2016/08/LanguageIcon-selection-884x1024.jpg?x18216'}}/>
+        <Text style ={styles.text_body1}></Text> 
+        <Button color = "black" title ="Tip of the Day" onPress={() => Alert.alert("Today's financial tip is:","Do your taxes",[{text:"Great"},{text:"Cancel"},])}></Button>
+        <Text style ={styles.text_body2}></Text> 
+        <Text style ={styles.text_streak}>Streak: 27 | Weeks: 10</Text>
+        <Image source= {{ width:200, height:300, marginVertical: 80, uri: "https://emoneyadvisor.com/wp-content/uploads/2021/10/Video-Marketing-Resized.jpg" }}/>
+      </View> 
 
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Protal')}>
-          <AntDesign name="home" size={24} color="black"/>
-          </TouchableOpacity>
+      <View style={styles.navContainer}>
+      <View style={styles.navBar}>
+        <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Plans')}>
+        <AntDesign name="staro" size={24} color="black" />
+        </TouchableOpacity>
 
-          <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Quiz Assessements')}>
-          <AntDesign name="user" size={24} color="black" />
-          </TouchableOpacity>
-        </View>
-  </View>
+        <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Wealthsimple Protal')}>
+        <AntDesign name="home" size={24} color="black"/>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.iconBehave} onPress={() => navigation.navigate('Quiz Assessements')}>
+        <AntDesign name="user" size={24} color="black" />
+        </TouchableOpacity>
+      </View>
+    </View>
+
+    </View>
+    ); 
 }
 
 /* plans page */
@@ -366,6 +380,52 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: '#fff',
     marginBottom: 35,
-  }
+  },
+
+  /*  */
+  container_tips: {
+    flex: 1,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text_body1:{
+    color: 'black',
+    backgroundColor: 'gainsboro',
+    height: 1,
+    width: 200,
+    textAlign: 'center',
+    paddingTop: 1,
+    paddingBottom: 1,
+    fontFamily: 'Times New Roman',
+    bottom: 10,
+  },
+  text_body2:{
+    color: 'black',
+    backgroundColor: 'gainsboro',
+    height: 1,
+    width: 200,
+    textAlign: 'center',
+    paddingTop: 1,
+    paddingBottom: 1,
+    fontFamily: 'Times New Roman',
+    marginBottom: 60,
+  },
+  text_streak:{
+    color: 'black',
+    backgroundColor: 'gainsboro',
+    margin:40,
+    textAlign: 'center',
+    fontWeight: '500',
+    fontSize: '20',
+    bottom:50,
+  },   
+  tinyLogo:{
+    width:25,
+    height:25,
+    //marginBottom: 180,
+    marginLeft: 350,
+    bottom: 120,
+  },
 
 });
