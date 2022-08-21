@@ -1,28 +1,23 @@
 export default data = [
     {
-        question: "Finance question 1?",
-        options: ["option 1","option 2","option 3","option 4"],
-        correct_option: "option 1"
+        question: "What does RRSP stand for?",
+        options: ["Registered Retires Saving Plantation","Registered Retirement Savings Plan","Ricky Roberts Savings Plan","Retirement Registered Salty Plan"],
+        correct_option: "Registered Retires Saving Plantation"
     },
     {
-        question: "Finance question 2?",
-        options: ["option 1","option 2","option 3"],
-        correct_option: "option 2"
+        question: "How often should you do your taxes?",
+        options: ["Yearly","Monthly","Daily", "bi-annually"],
+        correct_option: "Yearly"
     },
     {
-        question: "Finance question 3?",
-        options: ["option 1","option 2"],
-        correct_option: "option 2"
+        question: "What are RESP's?",
+        options: ["They help outside residents to save and pay for their children's full or part time studies after high school","They help Canadian residents to save and pay for their children's full or part time studies after high school", "They help retired people to save and pay for their children's full or part time studies after high school"],
+        correct_option: "They help Canadian residents to save and pay for their children's full or part time studies after high school"
     },
     {
-        question: "Finance question 4?",
-        options: ["option 1","option 2","option 3","option 4"],
-        correct_option: "option 4"
-    },
-    {
-        question: "Finance question 5?",
-        options: ["option 1","option 2","option 3","option 4"],
-        correct_option: "option 1"
+        question: "One of these is not a financial Institution in Canada",
+        options: ["TD Bank","CIBC Bank","RBC Bank","GTB Bank"],
+        correct_option: "GTB Bank"
     }
     
 ]

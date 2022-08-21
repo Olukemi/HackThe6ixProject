@@ -20,7 +20,7 @@ function WSPortal ({ navigation }){
   return (
     <View style={styles.container_portal}>
       
-      <TouchableOpacity style={styles.plan_behave} onPress={() => navigation.navigate('Financial Tips')}>
+      <TouchableOpacity style={styles.plan_behave1} onPress={() => navigation.navigate('Financial Tips')}>
         <Image style={styles.logo} source={require('./assets/logo.png')} />
       </TouchableOpacity>
 
@@ -95,14 +95,20 @@ function WSPlans ({ navigation }){
             </SafeAreaView>
 
           <Text style={styles.name_sub}>Recommendations</Text>
-          <Image style={styles.plan_imagesrec} source={require('./assets/work.jpeg')} />
-          <Text style={styles.name_sub}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</Text>
-          <Image style={styles.plan_imagesrec} source={require('./assets/work.jpeg')} />
-          <Text style={styles.name_sub}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</Text>
+
+          <View style={styles.plan_behave}>
+            <Image style={styles.plan_imagesrec} source={require('./assets/work.jpeg')} />
+            <Text style={styles.name_sub}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</Text>
+          </View>
+
+          <View style={styles.plan_behave}>
+            <Image style={styles.plan_imagesrec} source={require('./assets/work.jpeg')} />
+            <Text style={styles.name_sub}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</Text>
+          </View>
         </ScrollView>
       </SafeAreaView>
 
@@ -256,7 +262,7 @@ export default function App() {
 const styles = StyleSheet.create({
 
   text : {
-    color: 'black',
+    color: 'white',
     fontSize: 20,
   },
 
@@ -276,21 +282,21 @@ const styles = StyleSheet.create({
 
   name_sub: {
     fontSize: 20,
-    color: '#fff',
+    color: 'black',
     //fontFamily: 'Comfortaa_400Regular',
     marginBottom: 30,
   },
 
   name_comp: {
     fontSize: 15,
-    color: '#fff',
+    color: 'black',
     //fontFamily: 'Comfortaa_400Regular',
     marginBottom: 10,
   },
 
   name_day: {
     fontSize: 20,
-    color: '#fff',
+    color: 'black',
     //fontFamily: 'Comfortaa_400Regular',
     marginBottom: 30,
     borderTopWidth: 0.5,
@@ -299,7 +305,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -311,7 +317,7 @@ const styles = StyleSheet.create({
   },
   container_currentplans: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 10,
@@ -333,7 +339,7 @@ const styles = StyleSheet.create({
 
   navBar: {
     flexDirection: 'row',
-    backgroundColor: 'black',
+    backgroundColor: '#7BCCB5',
     width: '100%',
     justifyContent: 'space-evenly',
     borderTopWidth: 0.5,
@@ -349,10 +355,19 @@ const styles = StyleSheet.create({
   },
 
   plan_behave: {
+    backgroundColor: '#7BCCB5',
+    borderRadius: 20,
+    padding: 8,
+    marginRight: 20,
+    marginBottom: 20
+  },
+
+  plan_behave1: {
     backgroundColor: 'white',
     borderRadius: 20,
     padding: 8,
     marginRight: 20,
+    marginBottom: 20
   },
 
   plan_images: {
@@ -379,7 +394,7 @@ const styles = StyleSheet.create({
 
   progress_bar: {
     flexDirection: 'row',
-    backgroundColor: 'grey',
+    backgroundColor: '#7BCCB5',
     width: '80%',
     height: 20,
     justifyContent: 'space-evenly',

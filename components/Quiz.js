@@ -61,7 +61,7 @@ function Quiz ({navigation}) {
     const renderQuestion = () => {
         return (
             <View style={{
-                marginVertical: 40
+                marginTop: 40
             }}>
                 {/* Question */}
                 <Text style={{
@@ -73,7 +73,7 @@ function Quiz ({navigation}) {
     }
     const renderOptions = () => {
         return (
-            <View>
+            <View >
                 {
                     allQuestions[currentQuestionIndex]?.options.map(option => (
                         <TouchableOpacity 
@@ -92,11 +92,13 @@ function Quiz ({navigation}) {
                             : option==currentOptionSelected 
                             ? "red" +'20'
                             : "black" +'20',
-                            height: 60, borderRadius: 20,
+                            borderRadius: 20,
+                            padding: 15,
                             flexDirection: 'row',
                             alignItems: 'center', justifyContent: 'space-between',
                             paddingHorizontal: 20,
                             marginVertical: 10
+                            
                         }}
                         >
                             <Text style={{fontSize: 20, color: "black"}}>{option}</Text>
