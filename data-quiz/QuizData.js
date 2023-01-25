@@ -2,7 +2,7 @@ export default data = [
     {
         question: "What does RRSP stand for?",
         options: ["Registered Retires Saving Plantation","Registered Retirement Savings Plan","Ricky Roberts Savings Plan","Retirement Registered Salty Plan"],
-        correct_option: "Registered Retires Saving Plantation"
+        correct_option: "Registered Retirement Savings Plan"
     },
     {
         question: "How often should you do your taxes?",
