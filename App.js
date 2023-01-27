@@ -160,7 +160,7 @@ function CLB ({ navigation }){
         <CollapseBody>
           <Text style={styles.name_sub}>Overview</Text>
           <Text style={styles.name_sub}>Daily Tip</Text>
-          <Text style={styles.name_sub}>Reasource</Text>
+          <Text style={styles.name_sub}>Resource</Text>
         </CollapseBody>
       </Collapse>
 
@@ -174,7 +174,7 @@ function CLB ({ navigation }){
         <CollapseBody>
           <Text style={styles.name_sub}>Overview</Text>
           <Text style={styles.name_sub}>Daily Tip</Text>
-          <Text style={styles.name_sub}>Reasource</Text>
+          <Text style={styles.name_sub}>Resource</Text>
         </CollapseBody>
       </Collapse>
 
@@ -188,7 +188,7 @@ function CLB ({ navigation }){
         <CollapseBody>
           <Text style={styles.name_sub}>Overview</Text>
           <Text style={styles.name_sub}>Daily Tip</Text>
-          <Text style={styles.name_sub}>Reasource</Text>
+          <Text style={styles.name_sub}>Resource</Text>
         </CollapseBody>
       </Collapse>
 
